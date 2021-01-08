@@ -1,5 +1,5 @@
 {
-  "name": "ot.js multi-docs",
+  "name": "ot.js-multidocs",
   "version": "1.0.0",
   "description": "Attempt to make ot.js support multiple documents",
   "main": "index.js",
