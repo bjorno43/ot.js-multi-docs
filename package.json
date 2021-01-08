@@ -1,0 +1,32 @@
+{
+  "name": "ot.js multi-docs",
+  "version": "1.0.0",
+  "description": "Attempt to make ot.js support multiple documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjorno43/ot.js-multi-docs.git"
+  },
+  "keywords": [
+    "demo",
+    "ot.js",
+    "Operational",
+    "transformation",
+    "OT"
+  ],
+  "author": "Bjorn van de Peut <webmaster@icecub.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjorno43/ot.js-multi-docs/issues"
+  },
+  "homepage": "https://github.com/bjorno43/ot.js-multi-docs",
+  "dependencies": {
+    "codemirror": "^5.34.0",
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
+}
