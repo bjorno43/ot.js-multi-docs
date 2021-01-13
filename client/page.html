@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+
+		<!-- ot.js -->
+		<script src="ot.js/text-operation.js"></script>
+		<script src="ot.js/selection.js"></script>
+		<script src="ot.js/wrapped-operation.js"></script>
+		<script src="ot.js/undo-manager.js"></script>
+		<script src="ot.js/client.js"></script>
+		<script src="ot.js/codemirror-adapter.js"></script>
+		<script src="ot.js/socketio-adapter.js"></script>
+		<script src="ot.js/editor-client.js"></script>
+
+		<link rel="stylesheet" href="client/css/index.css">
+
+		<!-- CodeMirror -->
+		<link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
+		<script src="node_modules/codemirror/lib/codemirror.js"></script>
+		<script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
+
+		<!-- socket.io -->
+		<script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+	</head>
+	<body>
+		<textarea id="note"></textarea><br/>
+
+		<!-- init client -->
+		<script>
+		const url = new URL(window.location.href);
+		const groupId = url.searchParams.get('groupid');
+		const docName = url.searchParams.get('page');
+
+		// Check if a group UID was given in the url.
+		if(groupId === null || groupId === undefined || groupId === ""){
+			throw new Error("No group id given.");
+		} else {
+			var socket = io.connect('', {query: 'groupid='+groupId+'&docName='+docName});
+			socket.on('doc', function(data) {
+				var cm = CodeMirror.fromTextArea(document.getElementById('note'), {lineNumbers: true, mode:  "javascript"});
+				cm.setValue(data.str);
+				cm.setSize("100%", "100%");
+				var serverAdapter = new ot.SocketIOAdapter(socket);
+				var editorAdapter = new ot.CodeMirrorAdapter(cm);
+				var client = new ot.EditorClient(data.docId, data.revision, data.clients, serverAdapter, editorAdapter);
+			})
+		}
+		</script>
+	</body>
+</html>

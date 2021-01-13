@@ -1,7 +1,7 @@
 {
-  "name": "ot.js-multidocs",
+  "name": "ot.js-demo",
   "version": "1.0.0",
-  "description": "Attempt to make ot.js support multiple documents",
+  "description": "simple demo for ot.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bjorno43/ot.js-multi-docs.git"
+    "url": "git+https://github.com/YingshanDeng/ot.js-demo.git"
   },
   "keywords": [
     "demo",
@@ -18,12 +18,12 @@
     "transformation",
     "OT"
   ],
-  "author": "Bjorn van de Peut <webmaster@icecub.nl>",
+  "author": "YingshanDeng <yingshandeng@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bjorno43/ot.js-multi-docs/issues"
+    "url": "https://github.com/YingshanDeng/ot.js-demo/issues"
   },
-  "homepage": "https://github.com/bjorno43/ot.js-multi-docs",
+  "homepage": "https://github.com/YingshanDeng/ot.js-demo#readme",
   "dependencies": {
     "codemirror": "^5.34.0",
     "express": "^4.16.2",

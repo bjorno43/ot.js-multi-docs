@@ -6,7 +6,7 @@ ot.SocketIOAdapter = (function () {
 	function SocketIOAdapter (socket) {
 		this.socket = socket;
 
-		var self = this;
+		/*var self = this;
 		socket
 			.on('client_left', function (clientId) {
 				self.trigger('client_left', clientId);
@@ -24,7 +24,7 @@ ot.SocketIOAdapter = (function () {
 			})
 			.on('reconnect', function () {
 				self.trigger('reconnect');
-			});
+			});*/
 	}
 
 	SocketIOAdapter.prototype.sendOperation = function (docId, revision, operation, selection) {
